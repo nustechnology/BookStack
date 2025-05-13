@@ -40,7 +40,7 @@ class Chapter extends BookChild
     public function getUrl(string $path = ''): string
     {
         $parts = [
-            'books',
+            'documents',
             urlencode($this->book_slug ?? $this->book->slug),
             'chapter',
             urlencode($this->slug),

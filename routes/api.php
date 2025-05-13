@@ -26,16 +26,16 @@ Route::get('attachments/{id}', [AttachmentApiController::class, 'read']);
 Route::put('attachments/{id}', [AttachmentApiController::class, 'update']);
 Route::delete('attachments/{id}', [AttachmentApiController::class, 'delete']);
 
-Route::get('books', [EntityControllers\BookApiController::class, 'list']);
-Route::post('books', [EntityControllers\BookApiController::class, 'create']);
-Route::get('books/{id}', [EntityControllers\BookApiController::class, 'read']);
-Route::put('books/{id}', [EntityControllers\BookApiController::class, 'update']);
-Route::delete('books/{id}', [EntityControllers\BookApiController::class, 'delete']);
+Route::get('documents', [EntityControllers\BookApiController::class, 'list']);
+Route::post('documents', [EntityControllers\BookApiController::class, 'create']);
+Route::get('documents/{id}', [EntityControllers\BookApiController::class, 'read']);
+Route::put('documents/{id}', [EntityControllers\BookApiController::class, 'update']);
+Route::delete('documents/{id}', [EntityControllers\BookApiController::class, 'delete']);
 
-Route::get('books/{id}/export/html', [ExportControllers\BookExportApiController::class, 'exportHtml']);
-Route::get('books/{id}/export/pdf', [ExportControllers\BookExportApiController::class, 'exportPdf']);
-Route::get('books/{id}/export/plaintext', [ExportControllers\BookExportApiController::class, 'exportPlainText']);
-Route::get('books/{id}/export/markdown', [ExportControllers\BookExportApiController::class, 'exportMarkdown']);
+Route::get('documents/{id}/export/html', [ExportControllers\BookExportApiController::class, 'exportHtml']);
+Route::get('documents/{id}/export/pdf', [ExportControllers\BookExportApiController::class, 'exportPdf']);
+Route::get('documents/{id}/export/plaintext', [ExportControllers\BookExportApiController::class, 'exportPlainText']);
+Route::get('documents/{id}/export/markdown', [ExportControllers\BookExportApiController::class, 'exportMarkdown']);
 
 Route::get('chapters', [EntityControllers\ChapterApiController::class, 'list']);
 Route::post('chapters', [EntityControllers\ChapterApiController::class, 'create']);
@@ -66,11 +66,11 @@ Route::delete('image-gallery/{id}', [ImageGalleryApiController::class, 'delete']
 
 Route::get('search', [SearchApiController::class, 'all']);
 
-Route::get('shelves', [EntityControllers\BookshelfApiController::class, 'list']);
-Route::post('shelves', [EntityControllers\BookshelfApiController::class, 'create']);
-Route::get('shelves/{id}', [EntityControllers\BookshelfApiController::class, 'read']);
-Route::put('shelves/{id}', [EntityControllers\BookshelfApiController::class, 'update']);
-Route::delete('shelves/{id}', [EntityControllers\BookshelfApiController::class, 'delete']);
+Route::get('hubs', [EntityControllers\BookshelfApiController::class, 'list']);
+Route::post('hubs', [EntityControllers\BookshelfApiController::class, 'create']);
+Route::get('hubs/{id}', [EntityControllers\BookshelfApiController::class, 'read']);
+Route::put('hubs/{id}', [EntityControllers\BookshelfApiController::class, 'update']);
+Route::delete('hubs/{id}', [EntityControllers\BookshelfApiController::class, 'delete']);
 
 Route::get('users', [UserApiController::class, 'list']);
 Route::post('users', [UserApiController::class, 'create']);

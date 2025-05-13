@@ -15,7 +15,7 @@ class BookLinkModelResolver implements CrossLinkModelResolver
 
     public function resolve(string $link): ?Model
     {
-        $pattern = '/^' . preg_quote(url('/books'), '/') . '\/([\w-]+)' . '([#?\/]|$)/';
+        $pattern = '/^' . preg_quote(url('/documents'), '/') . '\/([\w-]+)' . '([#?\/]|$)/';
         $matches = [];
         $match = preg_match($pattern, $link, $matches);
         if (!$match) {

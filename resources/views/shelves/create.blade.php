@@ -6,11 +6,11 @@
 
         <div class="my-s">
             @include('entities.breadcrumbs', ['crumbs' => [
-                '/shelves' => [
+                '/hubs' => [
                     'text' => trans('entities.shelves'),
                     'icon' => 'bookshelf',
                 ],
-                '/create-shelf' => [
+                '/create-hub' => [
                     'text' => trans('entities.shelves_create'),
                     'icon' => 'add',
                 ]
@@ -19,7 +19,7 @@
 
         <main class="card content-wrap">
             <h1 class="list-heading">{{ trans('entities.shelves_create') }}</h1>
-            <form action="{{ url("/shelves") }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url("/hubs") }}" method="POST" enctype="multipart/form-data">
                 @include('shelves.parts.form', ['shelf' => null, 'books' => $books])
             </form>
         </main>

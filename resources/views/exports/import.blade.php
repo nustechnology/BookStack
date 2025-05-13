@@ -33,7 +33,7 @@
                 @endif
 
                 <div class="text-right">
-                    <a href="{{ url('/books') }}" class="button outline">{{ trans('common.cancel') }}</a>
+                    <a href="{{ url('/documents') }}" class="button outline">{{ trans('common.cancel') }}</a>
                     <button type="submit" class="button">{{ trans('entities.import_validate') }}</button>
                 </div>
             </form>

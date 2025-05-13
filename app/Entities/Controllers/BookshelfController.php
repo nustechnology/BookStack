@@ -214,6 +214,6 @@ class BookshelfController extends Controller
 
         $this->shelfRepo->destroy($shelf);
 
-        return redirect('/shelves');
+        return redirect('/hubs');
     }
 }

@@ -47,7 +47,7 @@ class Bookshelf extends Entity implements HasCoverImage
      */
     public function getUrl(string $path = ''): string
     {
-        return url('/shelves/' . implode('/', [urlencode($this->slug), trim($path, '/')]));
+        return url('/hubs/' . implode('/', [urlencode($this->slug), trim($path, '/')]));
     }
 
     /**

@@ -14,7 +14,7 @@ class BookshelfLinkModelResolver implements CrossLinkModelResolver
     }
     public function resolve(string $link): ?Model
     {
-        $pattern = '/^' . preg_quote(url('/shelves'), '/') . '\/([\w-]+)' . '([#?\/]|$)/';
+        $pattern = '/^' . preg_quote(url('/hubs'), '/') . '\/([\w-]+)' . '([#?\/]|$)/';
         $matches = [];
         $match = preg_match($pattern, $link, $matches);
         if (!$match) {

@@ -15,7 +15,7 @@ class ChapterLinkModelResolver implements CrossLinkModelResolver
 
     public function resolve(string $link): ?Model
     {
-        $pattern = '/^' . preg_quote(url('/books'), '/') . '\/([\w-]+)' . '\/chapter\/' . '([\w-]+)' . '([#?\/]|$)/';
+        $pattern = '/^' . preg_quote(url('/documents'), '/') . '\/([\w-]+)' . '\/chapter\/' . '([\w-]+)' . '([#?\/]|$)/';
         $matches = [];
         $match = preg_match($pattern, $link, $matches);
         if (!$match) {

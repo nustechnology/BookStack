@@ -15,7 +15,7 @@ class PageLinkModelResolver implements CrossLinkModelResolver
 
     public function resolve(string $link): ?Model
     {
-        $pattern = '/^' . preg_quote(url('/books'), '/') . '\/([\w-]+)' . '\/page\/' . '([\w-]+)' . '([#?\/]|$)/';
+        $pattern = '/^' . preg_quote(url('/documents'), '/') . '\/([\w-]+)' . '\/page\/' . '([\w-]+)' . '([#?\/]|$)/';
         $matches = [];
         $match = preg_match($pattern, $link, $matches);
         if (!$match) {

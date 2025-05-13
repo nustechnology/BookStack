@@ -13,11 +13,11 @@
                 ]])
             @else
                 @include('entities.breadcrumbs', ['crumbs' => [
-                    '/books' => [
+                    '/documents' => [
                         'text' => trans('entities.books'),
                         'icon' => 'book'
                     ],
-                    '/create-book' => [
+                    '/create-document' => [
                         'text' => trans('entities.books_create'),
                         'icon' => 'add'
                     ]
@@ -27,9 +27,9 @@
 
         <main class="content-wrap card">
             <h1 class="list-heading">{{ trans('entities.books_create') }}</h1>
-            <form action="{{ $bookshelf?->getUrl('/create-book') ?? url('/books') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ $bookshelf?->getUrl('/create-document') ?? url('/documents') }}" method="POST" enctype="multipart/form-data">
                 @include('books.parts.form', [
-                    'returnLocation' => $bookshelf?->getUrl() ?? url('/books')
+                    'returnLocation' => $bookshelf?->getUrl() ?? url('/documents')
                 ])
             </form>
         </main>
