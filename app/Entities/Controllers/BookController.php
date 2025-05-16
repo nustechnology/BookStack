@@ -214,7 +214,7 @@ class BookController extends Controller
 
         $this->bookRepo->destroy($book);
 
-        return redirect('/books');
+        return redirect('/documents');
     }
 
     /**

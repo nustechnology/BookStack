@@ -26,7 +26,7 @@
         <p class="text-muted">{{ trans('entities.books_empty') }}</p>
         @if(userCan('book-create-all'))
             <div class="icon-list block inline">
-                <a href="{{ url("/create-book") }}"
+                <a href="{{ url("/create-document") }}"
                    class="icon-list-item text-book">
                     <span>@icon('add')</span>
                     <span>{{ trans('entities.create_now') }}</span>

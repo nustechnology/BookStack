@@ -49,7 +49,7 @@
                     <p class="text-muted italic mt-xl mb-m">{{ trans('entities.shelves_empty_contents') }}</p>
                     <div class="icon-list inline block">
                         @if(userCan('book-create-all') && userCan('bookshelf-update', $shelf))
-                            <a href="{{ $shelf->getUrl('/create-book') }}" class="icon-list-item text-book">
+                            <a href="{{ $shelf->getUrl('/create-document') }}" class="icon-list-item text-book">
                                 <span class="icon">@icon('add')</span>
                                 <span>{{ trans('entities.books_create') }}</span>
                             </a>
@@ -112,7 +112,7 @@
         <div class="icon-list text-link">
 
             @if(userCan('book-create-all') && userCan('bookshelf-update', $shelf))
-                <a href="{{ $shelf->getUrl('/create-book') }}" data-shortcut="new" class="icon-list-item">
+                <a href="{{ $shelf->getUrl('/create-document') }}" data-shortcut="new" class="icon-list-item">
                     <span class="icon">@icon('add')</span>
                     <span>{{ trans('entities.books_new_action') }}</span>
                 </a>

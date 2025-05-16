@@ -6,7 +6,7 @@
             @if (isset($bookshelf))
                 @include('entities.breadcrumbs', ['crumbs' => [
                     $bookshelf,
-                    $bookshelf->getUrl('/create-book') => [
+                    $bookshelf->getUrl('/create-document') => [
                         'text' => trans('entities.books_create'),
                         'icon' => 'add'
                     ]

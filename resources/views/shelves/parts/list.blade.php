@@ -31,7 +31,7 @@
         <p class="text-muted">{{ trans('entities.shelves_empty') }}</p>
         @if(userCan('bookshelf-create-all'))
             <div class="icon-list block inline">
-                <a href="{{ url("/create-shelf") }}"
+                <a href="{{ url("/create-hub") }}"
                    class="icon-list-item text-bookshelf">
                     <span>@icon('add')</span>
                     <span>{{ trans('entities.create_now') }}</span>

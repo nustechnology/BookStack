@@ -13,7 +13,7 @@
         <h5>{{ trans('common.actions') }}</h5>
         <div class="icon-list text-link">
             @if(user()->can('book-create-all'))
-                <a href="{{ url("/create-book") }}" class="icon-list-item">
+                <a href="{{ url("/create-document") }}" class="icon-list-item">
                     <span>@icon('add')</span>
                     <span>{{ trans('entities.books_create') }}</span>
                 </a>
