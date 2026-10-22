@@ -7,6 +7,7 @@ use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Support\Facades\Log;
 use League\Flysystem\UnableToSetVisibility;
+use League\Flysystem\Visibility;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ImageStorageDisk
@@ -60,11 +61,19 @@ class ImageStorageDisk
 
     /**
      * Get a stream to the file at the given path.
-     * @returns ?resource
+     * @return ?resource
      */
     public function stream(string $path): mixed
     {
         return $this->filesystem->readStream($this->adjustPathForDisk($path));
+    }
+
+    /**
+     * Get the size of the file at the given path.
+     */
+    public function size(string $path): int
+    {
+        return $this->filesystem->size($this->adjustPathForDisk($path));
     }
 
     /**
@@ -85,7 +94,7 @@ class ImageStorageDisk
         // require different ACLs for S3, and this provides us more logical control.
         if ($makePublic && !$this->isS3Like()) {
             try {
-                $this->filesystem->setVisibility($path, 'public');
+                $this->filesystem->setVisibility($path, Visibility::PUBLIC);
             } catch (UnableToSetVisibility $e) {
                 Log::warning("Unable to set visibility for image upload with relative path: {$path}");
             }

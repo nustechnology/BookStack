@@ -11,7 +11,7 @@
 return [
 
     // Default Filesystem Disk
-    // Options: local, local_secure, s3
+    // Options: local, local_secure, local_secure_restricted, s3
     'default' => env('STORAGE_TYPE', 'local'),
 
     // Filesystem to use specifically for image uploads.
@@ -34,6 +34,7 @@ return [
             'root'       => public_path(),
             'serve'      => false,
             'throw'      => true,
+            'directory_visibility' => 'public',
         ],
 
         'local_secure_attachments' => [
