@@ -13,7 +13,7 @@ class ShelvesApiTest extends TestCase
 {
     use TestsApi;
 
-    protected string $baseEndpoint = '/api/shelves';
+    protected string $baseEndpoint = '/api/hubs';
 
     public function test_index_endpoint_returns_expected_shelf()
     {
