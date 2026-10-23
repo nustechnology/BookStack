@@ -178,7 +178,7 @@ class RolePermissionsTest extends TestCase
     public function test_bookshelves_create_all_permissions()
     {
         $this->checkAccessPermission('bookshelf-create-all', [
-            '/create-shelf',
+            '/create-hub',
         ], [
             '/shelves' => 'New Shelf',
         ]);
@@ -261,7 +261,7 @@ class RolePermissionsTest extends TestCase
     public function test_books_create_all_permissions()
     {
         $this->checkAccessPermission('book-create-all', [
-            '/create-book',
+            '/create-document',
         ], [
             '/books' => 'Create New Book',
         ]);

@@ -17,9 +17,9 @@ class BookTest extends TestCase
         ]);
 
         $resp = $this->asEditor()->get('/books');
-        $this->withHtml($resp)->assertElementContains('a[href="' . url('/create-book') . '"]', 'Create New Book');
+        $this->withHtml($resp)->assertElementContains('a[href="' . url('/create-document') . '"]', 'Create New Book');
 
-        $resp = $this->get('/create-book');
+        $resp = $this->get('/create-document');
         $this->withHtml($resp)->assertElementContains('form[action="' . url('/books') . '"][method="POST"]', 'Save Book');
 
         $resp = $this->post('/books', $book->only('name', 'description_html'));
@@ -170,7 +170,7 @@ class BookTest extends TestCase
 
     public function test_cancel_on_create_page_leads_back_to_books_listing()
     {
-        $resp = $this->asEditor()->get('/create-book');
+        $resp = $this->asEditor()->get('/create-document');
         $this->withHtml($resp)->assertElementContains('form a[href="' . url('/books') . '"]', 'Cancel');
     }
 

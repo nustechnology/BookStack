@@ -143,7 +143,7 @@ class BookShelfTest extends TestCase
     {
         $shelf = $this->entities->shelf();
         $resp = $this->asAdmin()->get($shelf->getUrl());
-        $resp->assertSee($shelf->getUrl('/create-book'));
+        $resp->assertSee($shelf->getUrl('/create-document'));
         $resp->assertSee($shelf->getUrl('/edit'));
         $resp->assertSee($shelf->getUrl('/permissions'));
         $resp->assertSee($shelf->getUrl('/delete'));
@@ -292,14 +292,14 @@ class BookShelfTest extends TestCase
     public function test_shelf_create_new_book()
     {
         $shelf = $this->entities->shelf();
-        $resp = $this->asEditor()->get($shelf->getUrl('/create-book'));
+        $resp = $this->asEditor()->get($shelf->getUrl('/create-document'));
 
         $resp->assertSee('Create New Book');
         $resp->assertSee($shelf->getShortName());
 
         $testName = 'Test Book in Shelf Name';
 
-        $createBookResp = $this->asEditor()->post($shelf->getUrl('/create-book'), [
+        $createBookResp = $this->asEditor()->post($shelf->getUrl('/create-document'), [
             'name'             => $testName,
             'description_html' => 'Book in shelf description',
         ]);
@@ -410,7 +410,7 @@ class BookShelfTest extends TestCase
         $shelf = Bookshelf::where('name', '=', $shelfInfo['name'])->first();
 
         // Create book and add to shelf
-        $this->asEditor()->post($shelf->getUrl('/create-book'), [
+        $this->asEditor()->post($shelf->getUrl('/create-document'), [
             'name'             => 'Test book name',
             'description_html' => '<p>Book in shelf description</p>',
         ]);
@@ -430,7 +430,7 @@ class BookShelfTest extends TestCase
     public function test_cancel_on_child_book_creation_returns_to_original_shelf()
     {
         $shelf = $this->entities->shelf();
-        $resp = $this->asEditor()->get($shelf->getUrl('/create-book'));
+        $resp = $this->asEditor()->get($shelf->getUrl('/create-document'));
         $this->withHtml($resp)->assertElementContains('form a[href="' . $shelf->getUrl() . '"]', 'Cancel');
     }
 

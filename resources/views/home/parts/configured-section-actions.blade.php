@@ -7,7 +7,7 @@ $view - string - Configured view type from parent (for books/shelves list/grid v
     <div class="icon-list text-link">
         @if($homeView === 'books')
             @if(userCan(\BookStack\Permissions\Permission::BookCreateAll))
-                <a href="{{ url("/create-book") }}" class="icon-list-item">
+                <a href="{{ url("/create-document") }}" class="icon-list-item">
                     <span>@icon('add')</span>
                     <span>{{ trans('entities.books_create') }}</span>
                 </a>
@@ -19,7 +19,7 @@ $view - string - Configured view type from parent (for books/shelves list/grid v
             </a>
         @elseif ($homeView === 'bookshelves')
             @if(userCan(\BookStack\Permissions\Permission::BookshelfCreateAll))
-                <a href="{{ url("/create-shelf") }}" class="icon-list-item">
+                <a href="{{ url("/create-hub") }}" class="icon-list-item">
                     <span>@icon('add')</span>
                     <span>{{ trans('entities.shelves_new_action') }}</span>
                 </a>

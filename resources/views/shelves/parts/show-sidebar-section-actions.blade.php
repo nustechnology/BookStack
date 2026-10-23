@@ -3,7 +3,7 @@
     <div class="icon-list text-link">
 
         @if(userCan(\BookStack\Permissions\Permission::BookCreateAll) && userCan(\BookStack\Permissions\Permission::BookshelfUpdate, $shelf))
-            <a href="{{ $shelf->getUrl('/create-book') }}" data-shortcut="new" class="icon-list-item">
+            <a href="{{ $shelf->getUrl('/create-document') }}" data-shortcut="new" class="icon-list-item">
                 <span class="icon">@icon('add')</span>
                 <span>{{ trans('entities.books_new_action') }}</span>
             </a>

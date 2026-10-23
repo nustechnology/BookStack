@@ -2,7 +2,7 @@
     <h5>{{ trans('common.actions') }}</h5>
     <div class="icon-list text-link">
         @if(userCan(\BookStack\Permissions\Permission::BookshelfCreateAll))
-            <a href="{{ url("/create-shelf") }}" data-shortcut="new" class="icon-list-item">
+            <a href="{{ url("/create-hub") }}" data-shortcut="new" class="icon-list-item">
                 <span>@icon('add')</span>
                 <span>{{ trans('entities.shelves_new_action') }}</span>
             </a>

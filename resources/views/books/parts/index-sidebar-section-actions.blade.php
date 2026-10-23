@@ -2,7 +2,7 @@
     <h5>{{ trans('common.actions') }}</h5>
     <div class="icon-list text-link">
         @if(userCan(\BookStack\Permissions\Permission::BookCreateAll))
-            <a href="{{ url("/create-book") }}" data-shortcut="new" class="icon-list-item">
+            <a href="{{ url("/create-document") }}" data-shortcut="new" class="icon-list-item">
                 <span>@icon('add')</span>
                 <span>{{ trans('entities.books_create') }}</span>
             </a>
